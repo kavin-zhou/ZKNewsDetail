@@ -9,6 +9,13 @@
                     h1 { color:steelblue; font-size:24px; margin-top:24px; }
                     button { margin:0 3px 10px; font-size:12px; }
                     .logLine { border-bottom:1px solid #ccc; padding:4px 2px; font-family:courier; font-size:11px; }
+                    
+                    /*标题*/
+                    p.thicker { font-weight: 900 }
+                    p.light { font-weight: 0 }
+                    p { font-size: 108% }
+                    h2 { font-size: 120% }
+                    h3 { font-size: 80% }
                     </style>
     </head>
     <body>
@@ -42,12 +49,12 @@
         
         /*与OC交互的所有JS方法都要放在此处注册，才能调用通过JS调用OC或者让OC调用这里的JS*/
         connectWebViewJavascriptBridge(function(bridge) {
-                                       var uniqueId = 1
+                                       var uniqueId = 1;
                                        function log(message, data) {
-                                       var log = document.getElementById('log')
-                                       var el = document.createElement('div')
-                                       el.className = 'logLine'
-                                       el.innerHTML = uniqueId++ + '. ' + message + ':<br/>' + JSON.stringify(data)
+                                       var log = document.getElementById('log');
+                                       var el = document.createElement('div');
+                                       el.className = 'logLine';
+                                       el.innerHTML = uniqueId++ + '. ' + message + ':<br/>' + JSON.stringify(data);
                                        if (log.children.length) { log.insertBefore(el, log.children[0]) }
                                        else { log.appendChild(el) }
                                        }
@@ -56,17 +63,17 @@
                                        //data是oc传过来的参数
                                        bridge.registerHandler('testJavascriptHandler', function(data, responseCallback) {
                                                               responseCallback(data)
-                                                              })
+                                                              });
                                        
                                        bridge.registerHandler('replaceImage', function(data, responseCallback) {
-                                                              if (data.match("replaceimage")) {
+                                                              if (!data.match("replaceimage")) {
+                                                              return;
+                                                              }
                                                               var index = data.indexOf(",");
                                                               var messageReplace = data.substring(0, index);
-                                                              
                                                               var messagePath = data.substring(index+1);
                                                               
                                                               messageReplace = messageReplace.replace(/replaceimage/, "");
-                                                              
                                                               
                                                               element = document.getElementById(messageReplace);
                                                               
@@ -74,9 +81,7 @@
                                                               responseCallback(messagePath);
                                                               element.src = messagePath
                                                               }
-                                                              }
                                                               });
-                                       
                                        
                                        document.body.appendChild(document.createElement('br'));
                                        

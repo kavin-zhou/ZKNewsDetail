@@ -4,6 +4,6 @@ target 'ZKNewsDetail' do
 pod 'SDWebImage'
 pod 'GRMustache'
 pod 'AFNetworking'
-pod 'MJExtension'
 pod 'MWPhotoBrowser'
+pod 'YYModel'
 end

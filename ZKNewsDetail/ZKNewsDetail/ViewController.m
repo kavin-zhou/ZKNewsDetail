@@ -12,7 +12,7 @@
 #import "GRMustache.h"
 #import "DataInfo.h"
 #import "ImageInfo.h"
-#import "MJExtension.h"
+#import "YYModel.h"
 #import "SDWebImageManager.h"
 #import "MWPhotoBrowser.h"
 
@@ -32,7 +32,7 @@
     [super viewDidLoad];
     [self initUI];
     [self initBridge];
-    [self httpRequest];
+    [self requestNetData];
 }
 
 - (void)initUI {
@@ -46,14 +46,11 @@
     // 开启日志
     [WebViewJavascriptBridge enableLogging];
     
-    //设置给哪个webView建立js与oc通信的桥梁
     self.bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView];
-    //如果需要实现UIWebViewDelegate可以设置代理
     [self.bridge setWebViewDelegate:self];
     
-    //注册 用于js主动调用oc
     [self.bridge registerHandler:@"testObjcCallback" handler:^(id data, WVJBResponseCallback responseCallback) {
-        NSLog(@"我是js主动调用后的输出");
+        NSLog(@"JS 主动调 OC");
     }];
     
     //注册图片点击事件
@@ -67,7 +64,7 @@
     
     //oc主动调用js
     [self.bridge callHandler:@"testJavascriptHandler" data:nil responseCallback:^(id responseData) {
-        NSLog(@"我是oc主动调用js后的输出");
+        NSLog(@"OC 主动调 JS");
     }];
 }
 
@@ -95,15 +92,15 @@
 }
 
 - (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index {
-    if (index < self.MWPhotoArr.count) {
-        return [self.MWPhotoArr objectAtIndex:index];
+    if (index >= self.MWPhotoArr.count) {
+        return nil;
     }
-    return nil;
+    return self.MWPhotoArr[index];
 }
 
-- (void)httpRequest {
+- (void)requestNetData {
     self.detailID = @"AQ72N9QG00051CA1";
-    //  AQ4RPLHG00964LQ9 
+    //AQ4RPLHG00964LQ9
     
     NSMutableString *urlStr = [NSMutableString stringWithString:@"http://c.m.163.com/nc/article/newsId/full.html"];
     [urlStr replaceOccurrencesOfString:@"newsId" withString:_detailID options:NSCaseInsensitiveSearch range:[urlStr rangeOfString:@"newsId"]];
@@ -112,7 +109,7 @@
     
     __weak typeof(self)weakSelf = self;
     [manager GET:urlStr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        DataInfo *model = [DataInfo mj_objectWithKeyValues:[responseObject objectForKey:self.detailID]];
+        DataInfo *model = [DataInfo yy_modelWithJSON:[responseObject objectForKey:self.detailID]];
         NSLog(@"请求成功");
         [weakSelf handleData:model];
         
@@ -130,9 +127,9 @@
     NSMutableString *allTitleStr = [self handleNewsTitle:data];
     NSMutableString *bodyStr = [self handleImageInNews:data];
     
-    NSString * str5 = [allTitleStr stringByAppendingString:bodyStr];
-    NSString* htmlPath = [[NSBundle mainBundle] pathForResource:@"NewsHtml" ofType:@"html"];
-    NSMutableString* appHtml = [NSMutableString stringWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:nil];
+    NSString *str5 = [allTitleStr stringByAppendingString:bodyStr];
+    NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"NewsHtml" ofType:@"html"];
+    NSMutableString *appHtml = [NSMutableString stringWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:nil];
     [appHtml replaceOccurrencesOfString:@"<p>mainnews</p>" withString:str5 options:NSCaseInsensitiveSearch range:[appHtml rangeOfString:@"<p>mainnews</p>"]];
     NSURL *baseURL = [NSURL fileURLWithPath:htmlPath];
     [self.webView loadHTMLString:appHtml baseURL:baseURL];
@@ -161,7 +158,7 @@
 
 //处理title的拼接显示
 - (NSMutableString *)handleNewsTitle:(DataInfo *)data {
-    NSString *htmlTitleStr = @"<style type='text/css'> p.thicker{font-weight: 900}p.light{font-weight: 0}p{font-size: 108%}h2 {font-size: 120%}h3 {font-size: 80%}</style> <h2 class = 'thicker'>{{title}}</h2><h3>{{source}} {{ptime}}</h3>";
+    NSString *htmlTitleStr = @"<h2 class = 'thicker'>{{title}}</h2><h3>{{source}} {{ptime}}</h3>";
     return [[GRMustacheTemplate renderObject:@{@"title" : data.title, @"source" : data.source, @"ptime" : data.ptime} fromString:htmlTitleStr error:NULL] mutableCopy];
 }
 

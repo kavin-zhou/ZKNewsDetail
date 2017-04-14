@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YYModel.h"
 
-@interface DataInfo : NSObject
+@interface DataInfo : NSObject <YYModel>
 
 @property (strong, nonatomic) NSString *body;
 @property (strong, nonatomic) NSMutableArray *img;

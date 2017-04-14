@@ -10,7 +10,7 @@
 
 @implementation DataInfo
 
-+ (NSDictionary *)mj_objectClassInArray {
++ (NSDictionary<NSString *,id> *)modelContainerPropertyGenericClass {
     return @{@"img" : @"ImageInfo"};
 }
 
