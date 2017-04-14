@@ -141,13 +141,15 @@
     
     [data.img enumerateObjectsUsingBlock:^(ImageInfo *info, NSUInteger idx, BOOL * _Nonnull stop) {
         NSRange range = [bodyStr rangeOfString:info.ref];
-        NSArray *wh = [info.pixel componentsSeparatedByString:@"*"];
-        CGFloat width = [[wh objectAtIndex:0] floatValue];
-        CGFloat height = [[wh objectAtIndex:1] floatValue];
+        NSArray *sizes = [info.pixel componentsSeparatedByString:@"*"];
+        CGFloat width = [sizes[0] floatValue];
+        CGFloat height = [sizes[1] floatValue];
+        
+        height = [UIScreen mainScreen].bounds.size.width * height / width;
         
         //占位图
         NSString *loadingImg = [[NSBundle mainBundle] pathForResource:@"loading" ofType:@"png"];
-        NSString *imageStr = [NSString stringWithFormat:@"<p style = 'text-align:center'><img onclick = 'didTappedImage(%lu);' src = %@ id = '%@' width = '%.0f' height = '%.0f' hspace='0.0' vspace ='5' style ='width:80%%;height:80%%;' /></p>", (unsigned long)idx, loadingImg, info.src, width, height];
+        NSString *imageStr = [NSString stringWithFormat:@"<p style = 'text-align:center'><img onclick = 'didTappedImage(%lu);' src = %@ id = '%@' width = '%.0f' height = '%.0f' style='width: 100%%;' /></p><p style='text-align:center;'>%@</p>", (unsigned long)idx, loadingImg, info.src, [UIScreen mainScreen].bounds.size.width, height, info.alt];
         [bodyStr replaceOccurrencesOfString:info.ref withString:imageStr options:NSCaseInsensitiveSearch range:range];
     }];
     
@@ -195,7 +197,9 @@
     [imageManager downloadImageWithURL:imageUrl options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
         if (image && finished) {
             NSLog(@"下载成功");
-            [weakSelf handleExistCache:imageUrl];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [weakSelf handleExistCache:imageUrl];
+            });
         } else {
             NSLog(@"图片下载失败");
         }
