@@ -1,0 +1,9 @@
+platform :ios, '8.0'
+
+target 'ZKNewsDetail' do
+pod 'SDWebImage'
+pod 'GRMustache'
+pod 'AFNetworking'
+pod 'MJExtension'
+pod 'MWPhotoBrowser'
+end

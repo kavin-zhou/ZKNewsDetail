@@ -12,9 +12,12 @@
 		58820C9C1EA0A0E000441296 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58820C9B1EA0A0E000441296 /* ViewController.m */; };
 		58820CA11EA0A0E000441296 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58820CA01EA0A0E000441296 /* Assets.xcassets */; };
 		58820CA41EA0A0E000441296 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58820CA21EA0A0E000441296 /* LaunchScreen.storyboard */; };
+		D40CED9C7BCFC8D537E0D49F /* libPods-ZKNewsDetail.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EAD70FEB4AD738B8F6BA26C /* libPods-ZKNewsDetail.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1CC0B0882963E50275850670 /* Pods-ZKNewsDetail.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZKNewsDetail.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZKNewsDetail/Pods-ZKNewsDetail.debug.xcconfig"; sourceTree = "<group>"; };
+		3EAD70FEB4AD738B8F6BA26C /* libPods-ZKNewsDetail.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZKNewsDetail.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58820C911EA0A0E000441296 /* ZKNewsDetail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZKNewsDetail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58820C951EA0A0E000441296 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		58820C971EA0A0E000441296 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		58820CA01EA0A0E000441296 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58820CA31EA0A0E000441296 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58820CA51EA0A0E000441296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA8AE49660181D8AA2574553 /* Pods-ZKNewsDetail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZKNewsDetail.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZKNewsDetail/Pods-ZKNewsDetail.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D40CED9C7BCFC8D537E0D49F /* libPods-ZKNewsDetail.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				58820C931EA0A0E000441296 /* ZKNewsDetail */,
 				58820C921EA0A0E000441296 /* Products */,
+				7277A104764FCBEB791F9F35 /* Pods */,
+				A68E16399E6DAEAD66483D28 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +83,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7277A104764FCBEB791F9F35 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1CC0B0882963E50275850670 /* Pods-ZKNewsDetail.debug.xcconfig */,
+				DA8AE49660181D8AA2574553 /* Pods-ZKNewsDetail.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A68E16399E6DAEAD66483D28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3EAD70FEB4AD738B8F6BA26C /* libPods-ZKNewsDetail.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,9 +107,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58820CA81EA0A0E000441296 /* Build configuration list for PBXNativeTarget "ZKNewsDetail" */;
 			buildPhases = (
+				378EAB4838622C814FD084DC /* [CP] Check Pods Manifest.lock */,
 				58820C8D1EA0A0E000441296 /* Sources */,
 				58820C8E1EA0A0E000441296 /* Frameworks */,
 				58820C8F1EA0A0E000441296 /* Resources */,
+				D8B7C674A32197DFCB004B30 /* [CP] Embed Pods Frameworks */,
+				257567B0676260171C4E5E9D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -141,6 +168,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		257567B0676260171C4E5E9D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZKNewsDetail/Pods-ZKNewsDetail-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		378EAB4838622C814FD084DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D8B7C674A32197DFCB004B30 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZKNewsDetail/Pods-ZKNewsDetail-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		58820C8D1EA0A0E000441296 /* Sources */ = {
@@ -261,6 +336,7 @@
 		};
 		58820CA91EA0A0E000441296 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CC0B0882963E50275850670 /* Pods-ZKNewsDetail.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9S49W485R2;
@@ -274,6 +350,7 @@
 		};
 		58820CAA1EA0A0E000441296 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA8AE49660181D8AA2574553 /* Pods-ZKNewsDetail.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9S49W485R2;
