@@ -16,6 +16,8 @@
 #import "SDWebImageManager.h"
 #import "MWPhotoBrowser.h"
 
+#define HexColor(hexValue)   [UIColor colorWithRed:((float)(((hexValue) & 0xFF0000) >> 16))/255.0 green:((float)(((hexValue) & 0xFF00) >> 8))/255.0 blue:((float)((hexValue) & 0xFF))/255.0 alpha:1]
+
 @interface ViewController () <UIWebViewDelegate ,MWPhotoBrowserDelegate>
 @property (strong, nonatomic) UIWebView *webView;
 @property (strong, nonatomic) NSString *detailID;
@@ -37,6 +39,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.webView];
+    _webView.backgroundColor = HexColor(0xf6f6f6);
 }
 
 - (void)initBridge {
@@ -99,7 +102,9 @@
 }
 
 - (void)httpRequest {
-    self.detailID = @"AQ4RPLHG00964LQ9";//多张图片
+    self.detailID = @"AQ72N9QG00051CA1";
+    //  AQ4RPLHG00964LQ9 
+    
     NSMutableString *urlStr = [NSMutableString stringWithString:@"http://c.m.163.com/nc/article/newsId/full.html"];
     [urlStr replaceOccurrencesOfString:@"newsId" withString:_detailID options:NSCaseInsensitiveSearch range:[urlStr rangeOfString:@"newsId"]];
     
