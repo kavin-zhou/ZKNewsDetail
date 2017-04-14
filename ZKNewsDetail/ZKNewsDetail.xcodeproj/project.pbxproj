@@ -12,6 +12,10 @@
 		58820C9C1EA0A0E000441296 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58820C9B1EA0A0E000441296 /* ViewController.m */; };
 		58820CA11EA0A0E000441296 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58820CA01EA0A0E000441296 /* Assets.xcassets */; };
 		58820CA41EA0A0E000441296 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58820CA21EA0A0E000441296 /* LaunchScreen.storyboard */; };
+		58820CAF1EA0A73900441296 /* ImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 58820CAB1EA0A73900441296 /* ImageInfo.m */; };
+		58820CB01EA0A73900441296 /* DataInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 58820CAD1EA0A73900441296 /* DataInfo.m */; };
+		58820CB21EA0A86900441296 /* NewsHtml.html in Resources */ = {isa = PBXBuildFile; fileRef = 58820CB11EA0A86900441296 /* NewsHtml.html */; };
+		58A9A9D51EA0ACB000170014 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 58A9A9D41EA0ACB000170014 /* loading.png */; };
 		D40CED9C7BCFC8D537E0D49F /* libPods-ZKNewsDetail.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EAD70FEB4AD738B8F6BA26C /* libPods-ZKNewsDetail.a */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +31,12 @@
 		58820CA01EA0A0E000441296 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58820CA31EA0A0E000441296 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58820CA51EA0A0E000441296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58820CAB1EA0A73900441296 /* ImageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageInfo.m; sourceTree = "<group>"; };
+		58820CAC1EA0A73900441296 /* ImageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageInfo.h; sourceTree = "<group>"; };
+		58820CAD1EA0A73900441296 /* DataInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataInfo.m; sourceTree = "<group>"; };
+		58820CAE1EA0A73900441296 /* DataInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataInfo.h; sourceTree = "<group>"; };
+		58820CB11EA0A86900441296 /* NewsHtml.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = NewsHtml.html; sourceTree = "<group>"; };
+		58A9A9D41EA0ACB000170014 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
 		DA8AE49660181D8AA2574553 /* Pods-ZKNewsDetail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZKNewsDetail.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZKNewsDetail/Pods-ZKNewsDetail.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,8 +75,14 @@
 			children = (
 				58820C971EA0A0E000441296 /* AppDelegate.h */,
 				58820C981EA0A0E000441296 /* AppDelegate.m */,
+				58820CB11EA0A86900441296 /* NewsHtml.html */,
+				58820CAC1EA0A73900441296 /* ImageInfo.h */,
+				58820CAB1EA0A73900441296 /* ImageInfo.m */,
+				58820CAE1EA0A73900441296 /* DataInfo.h */,
+				58820CAD1EA0A73900441296 /* DataInfo.m */,
 				58820C9A1EA0A0E000441296 /* ViewController.h */,
 				58820C9B1EA0A0E000441296 /* ViewController.m */,
+				58A9A9D41EA0ACB000170014 /* loading.png */,
 				58820C941EA0A0E000441296 /* Supporting Files */,
 			);
 			path = ZKNewsDetail;
@@ -134,7 +150,7 @@
 				TargetAttributes = {
 					58820C901EA0A0E000441296 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = 9S49W485R2;
+						DevelopmentTeam = TE2958KSXV;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -162,7 +178,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58A9A9D51EA0ACB000170014 /* loading.png in Resources */,
 				58820CA41EA0A0E000441296 /* LaunchScreen.storyboard in Resources */,
+				58820CB21EA0A86900441296 /* NewsHtml.html in Resources */,
 				58820CA11EA0A0E000441296 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +241,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				58820C9C1EA0A0E000441296 /* ViewController.m in Sources */,
+				58820CB01EA0A73900441296 /* DataInfo.m in Sources */,
+				58820CAF1EA0A73900441296 /* ImageInfo.m in Sources */,
 				58820C991EA0A0E000441296 /* AppDelegate.m in Sources */,
 				58820C961EA0A0E000441296 /* main.m in Sources */,
 			);
@@ -339,7 +359,8 @@
 			baseConfigurationReference = 1CC0B0882963E50275850670 /* Pods-ZKNewsDetail.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9S49W485R2;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				DEVELOPMENT_TEAM = TE2958KSXV;
 				INFOPLIST_FILE = ZKNewsDetail/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -353,7 +374,8 @@
 			baseConfigurationReference = DA8AE49660181D8AA2574553 /* Pods-ZKNewsDetail.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9S49W485R2;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				DEVELOPMENT_TEAM = TE2958KSXV;
 				INFOPLIST_FILE = ZKNewsDetail/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -381,6 +403,7 @@
 				58820CAA1EA0A0E000441296 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
