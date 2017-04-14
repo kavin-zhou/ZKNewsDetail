@@ -14,4 +14,5 @@
 @property(nonatomic,copy)NSString *pixel;
 @property(nonatomic,copy)NSString *ref;
 @property(nonatomic,copy)NSString *src;
+
 @end

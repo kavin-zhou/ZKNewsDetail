@@ -27,7 +27,6 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
-  - WebViewJavascriptBridge (5.2.0)
 
 DEPENDENCIES:
   - AFNetworking
@@ -35,7 +34,6 @@ DEPENDENCIES:
   - MJExtension
   - MWPhotoBrowser
   - SDWebImage
-  - WebViewJavascriptBridge (~> 5.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -46,8 +44,7 @@ SPEC CHECKSUMS:
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MWPhotoBrowser: 5836d7aa041dc05a13de380c246826578adc5ea5
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
-  WebViewJavascriptBridge: a00b2d61252aec5207e3263d46fd0fd3cfaf7895
 
-PODFILE CHECKSUM: 095227f541738acde2f4ad8262fce685218555f0
+PODFILE CHECKSUM: 625c391370200cb8c33ccff0522b1fb88e9df129
 
 COCOAPODS: 1.2.1.rc.1

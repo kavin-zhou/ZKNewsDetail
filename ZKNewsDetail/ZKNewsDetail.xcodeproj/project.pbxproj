@@ -16,6 +16,10 @@
 		58820CB01EA0A73900441296 /* DataInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 58820CAD1EA0A73900441296 /* DataInfo.m */; };
 		58820CB21EA0A86900441296 /* NewsHtml.html in Resources */ = {isa = PBXBuildFile; fileRef = 58820CB11EA0A86900441296 /* NewsHtml.html */; };
 		58A9A9D51EA0ACB000170014 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 58A9A9D41EA0ACB000170014 /* loading.png */; };
+		58A9A9DF1EA0B65300170014 /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A9A9D81EA0B65300170014 /* WebViewJavascriptBridge.m */; };
+		58A9A9E01EA0B65300170014 /* WebViewJavascriptBridge_JS.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A9A9DA1EA0B65300170014 /* WebViewJavascriptBridge_JS.m */; };
+		58A9A9E11EA0B65300170014 /* WebViewJavascriptBridgeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A9A9DC1EA0B65300170014 /* WebViewJavascriptBridgeBase.m */; };
+		58A9A9E21EA0B65300170014 /* WKWebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A9A9DE1EA0B65300170014 /* WKWebViewJavascriptBridge.m */; };
 		D40CED9C7BCFC8D537E0D49F /* libPods-ZKNewsDetail.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EAD70FEB4AD738B8F6BA26C /* libPods-ZKNewsDetail.a */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +41,14 @@
 		58820CAE1EA0A73900441296 /* DataInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataInfo.h; sourceTree = "<group>"; };
 		58820CB11EA0A86900441296 /* NewsHtml.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = NewsHtml.html; sourceTree = "<group>"; };
 		58A9A9D41EA0ACB000170014 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
+		58A9A9D71EA0B65300170014 /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
+		58A9A9D81EA0B65300170014 /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
+		58A9A9D91EA0B65300170014 /* WebViewJavascriptBridge_JS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge_JS.h; sourceTree = "<group>"; };
+		58A9A9DA1EA0B65300170014 /* WebViewJavascriptBridge_JS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge_JS.m; sourceTree = "<group>"; };
+		58A9A9DB1EA0B65300170014 /* WebViewJavascriptBridgeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridgeBase.h; sourceTree = "<group>"; };
+		58A9A9DC1EA0B65300170014 /* WebViewJavascriptBridgeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridgeBase.m; sourceTree = "<group>"; };
+		58A9A9DD1EA0B65300170014 /* WKWebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewJavascriptBridge.h; sourceTree = "<group>"; };
+		58A9A9DE1EA0B65300170014 /* WKWebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewJavascriptBridge.m; sourceTree = "<group>"; };
 		DA8AE49660181D8AA2574553 /* Pods-ZKNewsDetail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZKNewsDetail.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZKNewsDetail/Pods-ZKNewsDetail.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +87,7 @@
 			children = (
 				58820C971EA0A0E000441296 /* AppDelegate.h */,
 				58820C981EA0A0E000441296 /* AppDelegate.m */,
+				58A9A9D61EA0B65300170014 /* WebViewJavascriptBridge */,
 				58820CB11EA0A86900441296 /* NewsHtml.html */,
 				58820CAC1EA0A73900441296 /* ImageInfo.h */,
 				58820CAB1EA0A73900441296 /* ImageInfo.m */,
@@ -97,6 +110,21 @@
 				58820C951EA0A0E000441296 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		58A9A9D61EA0B65300170014 /* WebViewJavascriptBridge */ = {
+			isa = PBXGroup;
+			children = (
+				58A9A9D71EA0B65300170014 /* WebViewJavascriptBridge.h */,
+				58A9A9D81EA0B65300170014 /* WebViewJavascriptBridge.m */,
+				58A9A9D91EA0B65300170014 /* WebViewJavascriptBridge_JS.h */,
+				58A9A9DA1EA0B65300170014 /* WebViewJavascriptBridge_JS.m */,
+				58A9A9DB1EA0B65300170014 /* WebViewJavascriptBridgeBase.h */,
+				58A9A9DC1EA0B65300170014 /* WebViewJavascriptBridgeBase.m */,
+				58A9A9DD1EA0B65300170014 /* WKWebViewJavascriptBridge.h */,
+				58A9A9DE1EA0B65300170014 /* WKWebViewJavascriptBridge.m */,
+			);
+			path = WebViewJavascriptBridge;
 			sourceTree = "<group>";
 		};
 		7277A104764FCBEB791F9F35 /* Pods */ = {
@@ -240,8 +268,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58A9A9E11EA0B65300170014 /* WebViewJavascriptBridgeBase.m in Sources */,
 				58820C9C1EA0A0E000441296 /* ViewController.m in Sources */,
+				58A9A9DF1EA0B65300170014 /* WebViewJavascriptBridge.m in Sources */,
 				58820CB01EA0A73900441296 /* DataInfo.m in Sources */,
+				58A9A9E01EA0B65300170014 /* WebViewJavascriptBridge_JS.m in Sources */,
+				58A9A9E21EA0B65300170014 /* WKWebViewJavascriptBridge.m in Sources */,
 				58820CAF1EA0A73900441296 /* ImageInfo.m in Sources */,
 				58820C991EA0A0E000441296 /* AppDelegate.m in Sources */,
 				58820C961EA0A0E000441296 /* main.m in Sources */,

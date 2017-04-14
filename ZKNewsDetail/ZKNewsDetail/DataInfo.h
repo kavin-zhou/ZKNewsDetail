@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface DataInfo : NSObject
+
 @property (strong, nonatomic) NSString *body;
 @property (strong, nonatomic) NSMutableArray *img;
 @property (strong, nonatomic) NSString *source;
 @property (strong, nonatomic) NSString *ptime;
 @property (strong, nonatomic) NSString *title;
+
 @end

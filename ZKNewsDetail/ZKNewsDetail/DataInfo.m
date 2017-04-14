@@ -9,7 +9,9 @@
 #import "DataInfo.h"
 
 @implementation DataInfo
+
 + (NSDictionary *)mj_objectClassInArray {
     return @{@"img" : @"ImageInfo"};
 }
+
 @end

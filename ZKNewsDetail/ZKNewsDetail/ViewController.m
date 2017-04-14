@@ -100,8 +100,8 @@
 
 - (void)httpRequest {
     self.detailID = @"AQ4RPLHG00964LQ9";//多张图片
-    NSMutableString *urlStr = [NSMutableString stringWithString:@"http://c.m.163.com/nc/article/xukunhenwuliao/full.html"];
-    [urlStr replaceOccurrencesOfString:@"xukunhenwuliao" withString:_detailID options:NSCaseInsensitiveSearch range:[urlStr rangeOfString:@"xukunhenwuliao"]];
+    NSMutableString *urlStr = [NSMutableString stringWithString:@"http://c.m.163.com/nc/article/newsId/full.html"];
+    [urlStr replaceOccurrencesOfString:@"newsId" withString:_detailID options:NSCaseInsensitiveSearch range:[urlStr rangeOfString:@"newsId"]];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
@@ -147,7 +147,6 @@
         NSString *loadingImg = [[NSBundle mainBundle] pathForResource:@"loading" ofType:@"png"];
         NSString *imageStr = [NSString stringWithFormat:@"<p style = 'text-align:center'><img onclick = 'didTappedImage(%lu);' src = %@ id = '%@' width = '%.0f' height = '%.0f' hspace='0.0' vspace ='5' style ='width:80%%;height:80%%;' /></p>", (unsigned long)idx, loadingImg, info.src, width, height];
         [bodyStr replaceOccurrencesOfString:info.ref withString:imageStr options:NSCaseInsensitiveSearch range:range];
-        
     }];
     
     [self getImageFromDownloaderOrDiskByImageUrlArray:data.img];

@@ -6,5 +6,4 @@ pod 'GRMustache'
 pod 'AFNetworking'
 pod 'MJExtension'
 pod 'MWPhotoBrowser'
-pod 'WebViewJavascriptBridge', '~> 5.0'
 end
