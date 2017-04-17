@@ -26,6 +26,7 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
+  - WebViewJavascriptBridge (5.2.0)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
@@ -33,6 +34,7 @@ DEPENDENCIES:
   - GRMustache
   - MWPhotoBrowser
   - SDWebImage
+  - WebViewJavascriptBridge (~> 5.0)
   - YYModel
 
 SPEC CHECKSUMS:
@@ -43,8 +45,9 @@ SPEC CHECKSUMS:
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MWPhotoBrowser: 5836d7aa041dc05a13de380c246826578adc5ea5
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  WebViewJavascriptBridge: a00b2d61252aec5207e3263d46fd0fd3cfaf7895
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 9d9843425b3c7e93eb77b428ef15c4323d48b48a
+PODFILE CHECKSUM: e445a3a3ab442da4d38166c9e096d939b185d9a2
 
 COCOAPODS: 1.2.1.rc.1
